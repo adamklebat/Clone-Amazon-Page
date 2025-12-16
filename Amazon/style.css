@@ -1,0 +1,276 @@
+/* .Container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fb8500;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+} */
+
+
+body {
+      font-family: "Arial", "Ember", sans-serif;
+    }
+
+/* ================== HEADER 1 ================== */
+.Container {  
+    width: auto;               
+    margin: 0 auto;            
+    padding: 10px 20px;        
+    height: 60px;              
+    background-color: #f77f00; 
+    color: white;              
+    font-family: Arial, sans-serif; 
+
+    display: flex;             
+    align-items: center;       
+    justify-content: space-between; 
+}
+
+/* شعار الموقع */
+.logo h1 {
+    font-size: 24px;                        
+    font-family: amazon-ember, Arial, sans-serif; 
+}   
+
+/* ================== شريط البحث ================== */
+.search-bar {
+    display: flex;    
+    width: 50%;            /* عرض شريط البحث */
+    height: 40px;           
+    border-radius: 6px;     
+    overflow: hidden;       /* منع ظهور أي محتوى خارج الصندوق */
+}
+
+.search-select {
+    border: none;           /* إزالة الحدود الافتراضية */
+    background: #e6e6e6;    
+    padding: 10px;          
+    font-size: 14px;        
+    border: 1px solid #ccc; 
+    cursor: pointer;        
+}
+
+.search-input {
+    width: 75%;             /* عرض مربع الكتابة */
+    border: none;           /* إزالة الحدود */
+    padding: 10px;          
+    font-size: 15px;        
+}
+
+.search-button {
+    width: 5%;                     /* عرض زر البحث */
+    background: #febd69;           
+    border: none;                  
+    border-radius: 0 6px 6px 0;   /* تقويس الحواف على اليمين */
+    display: flex;                 
+    align-items: center;           /* محاذاة المحتوى عمودياً */
+    justify-content: center;       /* محاذاة المحتوى أفقياً */
+    cursor: pointer;               
+}
+
+/* ================== HEADER 2 ================== */
+.Container2 {
+    display: flex;                  /* ترتيب العناصر في خط واحد */
+    align-items: center;            /* محاذاة عمودية في المنتصف */
+    gap: 20px;                      /* المسافة بين العناصر */
+    background-color: #fca311;      
+    padding: 10px 20px;             
+    color: white;                   
+    font-family: amazon-ember, Arial, sans-serif; 
+} 
+
+/* ================== Breadcrumbs ================== */
+.breadcrumbs {
+    font-size: 14px;                
+    color: gray;                     
+}
+
+.breadcrumbs:hover {
+    text-decoration: underline;      /* خط تحت النص عند المرور */
+    cursor: pointer;                 
+}
+
+/* ================== Main content ================== */
+main {
+    padding: 20px;                  
+    font-family: Arial, sans-serif; 
+}
+
+/* شبكة المحتوى الرئيسي */
+.main-content {
+    display: grid;                   
+    grid-template-columns: 1fr 3fr 1fr; 
+    grid-template-rows: auto;        
+    gap: 20px;                        
+}
+
+/* العمود الأيسر للصور */
+.left-thumbnail {
+    display: flex; 
+    padding: 10px 20px;
+    position: sticky;       /* تثبيت العمود عند التمرير */
+    top: 20px;              /* المسافة من أعلى الصفحة */
+    align-self: start;      /* بداية العنصر من الأعلى */
+}
+
+/* صور مصغرة العمود الأيسر */
+.thumbnails {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;              
+}
+
+.thumbnails img {
+    border: 1px solid gray; 
+    padding: 5px;           
+    border-radius: 6px;     
+    cursor: pointer;       
+}
+
+/* ================== تفاصيل المنتج ================== */
+.product-details {
+    padding: 10px 20px;     
+}
+
+.Visit-the-ASUS-Store {
+    color: #1a73e8;         
+    text-decoration: none;   /* إزالة الخط التحتاني */
+    font-size: 14px;         
+}
+
+.Visit-the-ASUS-Store:hover {
+    text-decoration: underline; /* خط تحت النص عند المرور */
+    cursor: pointer;            
+}
+
+/* عدد المشترين */
+.Number-of-buyers{
+    font-size: 14px;
+    color: #1a73e8;
+}
+
+.Number-of-buyers:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* تقييم المنتج */
+.rating{
+    display: flex;
+    align-items: center; 
+}
+
+/* صناديق اختيار المنتج */
+.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;   /* محاذاة النص في المنتصف */
+    border: 1px solid gray;    
+    border-radius: 6px;        
+    padding: 10px;             
+    margin: 5px;               /* المسافة بين الصناديق */
+    cursor: pointer;           
+    width: 50px;               
+    height: auto;
+    flex-wrap: wrap;           /* التفاف النصوص إذا تجاوزت */
+}
+
+/* صندوق الخيارات */
+.product-details-boxes {
+    display: flex;             /* ترتيب الصناديق بجانب بعض */
+}
+
+.Quantity {
+
+    border: none;           /* إزالة الحدود الافتراضية */
+    background: #e6e6e6;    
+    padding: 10px;          
+    font-size: 14px;        
+    border: 1px solid #ccc; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    width: 100%;      
+}
+
+.add-to-cart-button {
+    background-color: #ffe23c; 
+    color: rgb(0, 0, 0);              
+    border: none;              
+    padding: 10px;        
+    font-size: 16px;           
+    border-radius: 25px;        
+    cursor: pointer;      
+    width: 100%;
+    margin: 5px;     
+}
+
+.add-to-cart-button:hover {
+    background-color: #e68a00; 
+}
+
+.buy-now-button {
+    background-color: #ffaa18; 
+    color: rgb(0, 0, 0);              
+    border: none;              
+    padding: 10px;        
+    font-size: 16px;           
+    border-radius: 25px;        
+    cursor: pointer;      
+    width: 100%;
+    margin: 5px;          
+}
+
+.buy-now-button:hover {
+    background-color: #e68a00; 
+}
+
+.Add-to-wish-list {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;   
+    text-align: left;
+    font-size: 14px;
+}
+
+.first-side-box{
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+}
+
+.second-side-box {
+    padding: 10px 20px;   
+    border: 1px solid gray;  
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    margin-bottom: 5px;
+}
+
+.third-side-box {
+    padding: 10px 20px;   
+    border: 1px solid gray;  
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    margin-bottom: 5px;
+}
+
+
+
+       
+
+
