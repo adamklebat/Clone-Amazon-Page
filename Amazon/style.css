@@ -1,124 +1,139 @@
-/* .Container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fb8500;
-    color: white;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    
-} */
+/* ================== 1. GLOBAL VARIABLES ================== */
+:root {
+    --amz-link: #007185;
+    --amz-link-hover: #c7511f;
+    --amz-red: #cc0c39;
+    --amz-text: #0f1111;
+    --amz-grey: #565959;
+    --amz-orange: #de7921;
+    --amz-prime-blue: #00a8e1;
+}
 
-
+/* ================== MAIN SETUP ================== */
 body {
-      font-family: "Arial", "Ember", sans-serif;
-    }
+    font-family: "Arial", "Ember", sans-serif;
+    margin: 0; /* FIX: Removes white gap around the header */
+    padding: 0;
+    background-color: #fff;
+}
 
 /* ================== HEADER 1 ================== */
 .Container {  
     width: auto;               
-    margin: 0 auto;            
+    margin: 0;            
     padding: 10px 20px;        
     height: 60px;              
-    background-color: #f77f00; 
+    background-color: #131921; /* Amazon Dark Blue */
     color: white;              
-    font-family: Arial, sans-serif; 
-
     display: flex;             
     align-items: center;       
     justify-content: space-between; 
 }
 
-/* شعار الموقع */
+/* Logo */
 .logo h1 {
     font-size: 24px;                        
     font-family: amazon-ember, Arial, sans-serif; 
+    margin: 0; 
 }   
 
-/* ================== شريط البحث ================== */
+/* ================== SEARCH BAR ================== */
 .search-bar {
     display: flex;    
-    width: 50%;            /* عرض شريط البحث */
+    flex-grow: 1; 
+    margin: 0 20px;
     height: 40px;           
     border-radius: 6px;     
-    overflow: hidden;       /* منع ظهور أي محتوى خارج الصندوق */
+    overflow: hidden;       
 }
 
 .search-select {
-    border: none;           /* إزالة الحدود الافتراضية */
-    background: #e6e6e6;    
-    padding: 10px;          
-    font-size: 14px;        
-    border: 1px solid #ccc; 
-    cursor: pointer;        
+    border: none;           
+    background: #f3f3f3;    
+    padding: 0 10px;          
+    font-size: 12px;        
+    border-right: 1px solid #cdcdcd; 
+    cursor: pointer;
+    color: #555;
 }
 
 .search-input {
-    width: 75%;             /* عرض مربع الكتابة */
-    border: none;           /* إزالة الحدود */
+    width: 100%;             
+    border: none;           
     padding: 10px;          
-    font-size: 15px;        
+    font-size: 15px; 
+    outline: none;       
 }
 
 .search-button {
-    width: 5%;                     /* عرض زر البحث */
+    width: 45px;                     
     background: #febd69;           
     border: none;                  
-    border-radius: 0 6px 6px 0;   /* تقويس الحواف على اليمين */
     display: flex;                 
-    align-items: center;           /* محاذاة المحتوى عمودياً */
-    justify-content: center;       /* محاذاة المحتوى أفقياً */
+    align-items: center;           
+    justify-content: center;       
     cursor: pointer;               
+}
+
+.search-button:hover {
+    background-color: #f3a847;
+}
+
+/* Header Text Items */
+.location, .language, .account, .orders, .cart {
+    font-size: 12px;
+    margin: 0 10px;
+    cursor: pointer;
+    white-space: nowrap;
 }
 
 /* ================== HEADER 2 ================== */
 .Container2 {
-    display: flex;                  /* ترتيب العناصر في خط واحد */
-    align-items: center;            /* محاذاة عمودية في المنتصف */
-    gap: 20px;                      /* المسافة بين العناصر */
-    background-color: #fca311;      
+    display: flex;                  
+    align-items: center;            
+    gap: 20px;                      
+    background-color: #232f3e;      
     padding: 10px 20px;             
     color: white;                   
     font-family: amazon-ember, Arial, sans-serif; 
+    font-size: 14px;
 } 
 
-/* ================== Breadcrumbs ================== */
+/* ================== BREADCRUMBS ================== */
 .breadcrumbs {
-    font-size: 14px;                
-    color: gray;                     
+    font-size: 12px;                
+    color: #565959;   
+    padding: 10px 20px;                  
 }
 
 .breadcrumbs:hover {
-    text-decoration: underline;      /* خط تحت النص عند المرور */
+    text-decoration: underline;      
     cursor: pointer;                 
 }
 
-/* ================== Main content ================== */
+/* ================== MAIN CONTENT LAYOUT ================== */
 main {
-    padding: 20px;                  
-    font-family: Arial, sans-serif; 
+    padding: 0 20px 20px 20px;                  
 }
 
-/* شبكة المحتوى الرئيسي */
 .main-content {
     display: grid;                   
-    grid-template-columns: 1fr 3fr 1fr; 
-    grid-template-rows: auto;        
-    gap: 20px;                        
+    /* FIX: 'auto' allows the image column to fit the image size without squashing it */
+    grid-template-columns: auto 1fr 280px; 
+    gap: 30px;
+    max-width: 1600px;
+    margin: 0 auto;                        
 }
 
-/* العمود الأيسر للصور */
+/* ================== IMAGES SECTION (FIXED) ================== */
 .left-thumbnail {
     display: flex; 
-    padding: 10px 20px;
-    position: sticky;       /* تثبيت العمود عند التمرير */
-    top: 20px;              /* المسافة من أعلى الصفحة */
-    align-self: start;      /* بداية العنصر من الأعلى */
+    flex-direction: row; 
+    align-items: flex-start;
+    position: sticky;
+    top: 20px;
 }
 
-/* صور مصغرة العمود الأيسر */
 .thumbnails {
     display: flex;
     flex-direction: column; 
@@ -126,151 +141,545 @@ main {
 }
 
 .thumbnails img {
-    border: 1px solid gray; 
+    border: 1px solid #a2a6ac; 
     padding: 5px;           
     border-radius: 6px;     
-    cursor: pointer;       
+    cursor: pointer;
+    width: 40px; /* Kept small */
+    height: auto;
+    object-fit: contain;
 }
 
-/* ================== تفاصيل المنتج ================== */
+.thumbnails img:hover {
+    box-shadow: 0 0 3px 2px #e77600;
+    border-color: #e77600;
+}
+
+.main-image {
+    flex-grow: 1;
+}
+
+.main-image img {
+    /* FIX: Ensures image takes up space and isn't crushed */
+    max-width: 100%;
+    margin-left: 15px;
+    min-width: 350px; /* Prevents collapsing */
+    height: auto;
+}
+
+/* ================== PRODUCT DETAILS CENTER ================== */
 .product-details {
-    padding: 10px 20px;     
+    padding: 0 10px;     
+}
+
+.product-details h2 {
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 500;
+    margin-top: 0;
 }
 
 .Visit-the-ASUS-Store {
-    color: #1a73e8;         
-    text-decoration: none;   /* إزالة الخط التحتاني */
+    color: #007185;         
+    text-decoration: none;   
     font-size: 14px;         
 }
 
 .Visit-the-ASUS-Store:hover {
-    text-decoration: underline; /* خط تحت النص عند المرور */
-    cursor: pointer;            
+    text-decoration: underline; 
+    color: #c7511f;
 }
 
-/* عدد المشترين */
-.Number-of-buyers{
-    font-size: 14px;
-    color: #1a73e8;
-}
-
-.Number-of-buyers:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-/* تقييم المنتج */
 .rating{
     display: flex;
     align-items: center; 
+    font-size: 14px;
+    color: #007185;
 }
 
-/* صناديق اختيار المنتج */
-.box {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;   /* محاذاة النص في المنتصف */
-    border: 1px solid gray;    
-    border-radius: 6px;        
-    padding: 10px;             
-    margin: 5px;               /* المسافة بين الصناديق */
-    cursor: pointer;           
-    width: 50px;               
-    height: auto;
-    flex-wrap: wrap;           /* التفاف النصوص إذا تجاوزت */
-}
-
-/* صندوق الخيارات */
+/* Boxes */
 .product-details-boxes {
-    display: flex;             /* ترتيب الصناديق بجانب بعض */
+    display: flex;             
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
 }
 
-.Quantity {
-
-    border: none;           /* إزالة الحدود الافتراضية */
-    background: #e6e6e6;    
-    padding: 10px;          
-    font-size: 14px;        
-    border: 1px solid #ccc; 
-    cursor: pointer; 
-    border-radius: 5px; 
-    width: 100%;      
+.box {
+    border: 1px solid #ccc;    
+    border-radius: 3px;        
+    padding: 8px;             
+    cursor: pointer;           
+    font-size: 13px;
+    text-align: center;
+    min-width: 80px;
 }
 
-.add-to-cart-button {
-    background-color: #ffe23c; 
-    color: rgb(0, 0, 0);              
-    border: none;              
-    padding: 10px;        
-    font-size: 16px;           
-    border-radius: 25px;        
-    cursor: pointer;      
+.box:hover {
+    border-color: #e77600;
+    background-color: #fef8f2;
+}
+
+/* Tables & Features */
+table {
     width: 100%;
-    margin: 5px;     
+    font-size: 14px;
+    margin-top: 15px;
+}
+.item-features {
+    font-size: 14px;
+    line-height: 1.5;
+    padding-left: 20px;
 }
 
-.add-to-cart-button:hover {
-    background-color: #e68a00; 
+/* ================== RIGHT SIDEBAR (BUY BOX) ================== */
+.side-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 250px;
 }
 
-.buy-now-button {
-    background-color: #ffaa18; 
-    color: rgb(0, 0, 0);              
-    border: none;              
-    padding: 10px;        
-    font-size: 16px;           
-    border-radius: 25px;        
-    cursor: pointer;      
+.first-side-box {
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.add-to-cart-button, .buy-now-button {
     width: 100%;
-    margin: 5px;          
-}
-
-.buy-now-button:hover {
-    background-color: #e68a00; 
-}
-
-.Add-to-wish-list {
-    color: black;
-    background-color: white;
-    border: 1px solid black;
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    border-radius: 20px;
     cursor: pointer;
-    margin: 5px;   
-    text-align: left;
+    margin: 5px 0;
     font-size: 14px;
 }
 
-.first-side-box{
-    border: 1px solid gray;
+.add-to-cart-button {
+    background-color: #ffd814; 
+}
+.add-to-cart-button:hover { background-color: #f7ca00; }
+
+.buy-now-button {
+    background-color: #ffa41c; 
+}
+.buy-now-button:hover { background-color: #fa8900; }
+
+.Add-to-wish-list {
+    background: white;
+    border: 1px solid #888;
+    width: 100%;
+    padding: 5px 10px;
     border-radius: 5px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-    height: fit-content;
-    margin-bottom: 5px;
-    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 13px;
 }
 
-.second-side-box {
-    padding: 10px 20px;   
-    border: 1px solid gray;  
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-    height: fit-content;
-    margin-bottom: 5px;
+.second-side-box, .third-side-box {
+    padding: 15px;   
+    border: 1px solid #d5d9d9;  
+    border-radius: 8px;
 }
 
-.third-side-box {
-    padding: 10px 20px;   
-    border: 1px solid gray;  
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-    height: fit-content;
-    margin-bottom: 5px;
+/* ========================================================
+   WIDGET: DEALS ON RELATED PRODUCTS (BOTTOM CAROUSEL)
+======================================================== */
+
+.amz-widget-container {
+    grid-column: 1 / -1; /* Spans full width below the grid */
+    margin-top: 40px;
+    border-top: 1px solid #ddd; 
+    padding-top: 20px;
+    font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+/* Header */
+.amz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.amz-header h2 {
+    display: inline;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    color: var(--amz-text);
+    margin: 0;
+    margin-right: 10px;
+}
+
+.sponsored {
+    color: var(--amz-grey);
+    font-size: 12px;
+}
+
+.info-icon {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: #ccc;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 13px;
+    font-size: 10px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.amz-header-right {
+    font-size: 13px;
+    color: var(--amz-text);
+}
+
+/* Carousel Layout */
+.amz-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.product-track {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 10px 5px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.product-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+    background: white;
+    border: 1px solid #d5d9d9;
+    border-radius: 7px;
+    width: 35px;
+    height: 38px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(213,217,217,.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.nav-btn:hover {
+    background-color: #f7fafa;
+    border-color: #d5d9d9;
+}
+
+.nav-btn.prev { margin-right: 10px; }
+.nav-btn.next { margin-left: 10px; }
+
+/* Product Card */
+.product-card {
+    width: 190px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-container {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    background-color: #f7f7f7; 
+}
+
+.img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Typography */
+.product-title {
+    display: block;
+    color: var(--amz-link);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.4;
+    max-height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Webkit line clamping */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    margin-bottom: 4px;
+}
+
+.product-title:hover {
+    color: var(--amz-link-hover);
+    text-decoration: underline;
+}
+
+/* Ratings */
+.rating-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+
+.stars {
+    color: var(--amz-orange);
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.count {
+    color: var(--amz-link);
+}
+
+/* Badges */
+.badge-row {
+    margin-bottom: 4px;
+}
+
+.deal-badge {
+    background-color: var(--amz-red);
+    color: white;
+    padding: 4px 6px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.black-badge {
+    background-color: #232f3e;
+    color: white;
+    padding: 4px 6px;
+    font-size: 11px;
+    font-weight: 400;
+    font-style: italic;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+.orange-text {
+    color: var(--amz-orange);
+    font-weight: 700;
+}
+
+/* Pricing */
+.price-row {
+    display: flex;
+    align-items: baseline;
+    margin-top: 2px;
+}
+
+.discount {
+    color: var(--amz-red);
+    font-size: 22px; 
+    font-weight: 300;
+    margin-right: 6px;
+}
+
+.symbol {
+    font-size: 12px;
+    vertical-align: top;
+    position: relative;
+    top: 3px;
+    font-weight: 500;
+}
+
+.whole {
+    font-size: 22px; 
+    font-weight: 500;
+    color: var(--amz-text);
+}
+
+.fraction {
+    font-size: 12px;
+    vertical-align: top;
+    position: relative;
+    top: 3px;
+    font-weight: 500;
+    color: var(--amz-text);
+}
+
+.old-price {
+    color: var(--amz-grey);
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+/* Prime Logo Simulation */
+.prime-row {
+    display: flex;
+    align-items: center;
+    font-style: italic;
+    font-weight: 800;
+    color: var(--amz-prime-blue);
+    font-size: 13px;
+}
+
+.prime-check {
+    color: #fca41c; 
+    font-weight: 900;
+    margin-right: 1px;
+    font-style: normal;
 }
 
 
 
+
+
+
+
+/* ================== FOOTER ================== */
+footer {
+    background-color: #232f3e; /* Dark Blue */
+    color: white;
+    font-family: Arial, sans-serif;
+    margin-top: 30px;
+}
+
+/* Back to Top */
+.back-to-top {
+    background-color: #37475a; /* Slightly lighter blue */
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.back-to-top:hover {
+    background-color: #485769;
+}
+
+.back-to-top a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+/* Main Section */
+.footer-main {
+    padding: 40px 0 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 40px;
+    flex-wrap: wrap; /* Prevents cutting off on mobile */
+    padding: 0 20px;
+}
+
+/* Column Styling */
+.footer-section {
+    min-width: 150px;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #dddddd;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Separator Line */
+.footer-line {
+    border: 0;
+    border-top: 1px solid #3a4553;
+    margin: 40px 0 30px 0;
+}
+
+/* Bottom Section (Logo + Buttons) */
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px; /* Space between Logo and Buttons */
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+.footer-logo a {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.footer-settings {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Settings Buttons */
+.settings-btn {
+    background: transparent;
+    border: 1px solid #848688;
+    color: #ccc;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.settings-btn:hover {
+    border-color: white;
+    color: white;
+    text-decoration: none;
+}
+
+.arrow { 
+    font-size: 8px;
+    color: #888;
+    margin-left: 2px;
+}
        
+
 
 
