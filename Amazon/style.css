@@ -39,12 +39,12 @@ body {
 
 /* ================== SEARCH BAR ================== */
 .search-bar {
-    display: flex;    
-    flex-grow: 1; 
+    display: flex;    /* Flex container for search bar */
+    flex-grow: 1;     /* Allows it to expand */
     margin: 0 20px;
     height: 40px;           
     border-radius: 6px;     
-    overflow: hidden;       
+    overflow: hidden;      /* Ensures rounded corners */ 
 }
 
 .search-select {
@@ -62,7 +62,7 @@ body {
     border: none;           
     padding: 10px;          
     font-size: 15px; 
-    outline: none;       
+    outline: none;       /* Removes blue outline on focus */
 }
 
 .search-button {
@@ -130,13 +130,13 @@ main {
     display: flex; 
     flex-direction: row; 
     align-items: flex-start;
-    position: sticky;
+    position: sticky;       /* FIX: Makes thumbnails sticky */
     top: 20px;
 }
 
 .thumbnails {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;     /* Vertical layout */
     gap: 10px;              
 }
 
@@ -147,7 +147,7 @@ main {
     cursor: pointer;
     width: 40px; /* Kept small */
     height: auto;
-    object-fit: contain;
+    object-fit: contain;    /* Maintains aspect ratio */
 }
 
 .thumbnails img:hover {
@@ -202,7 +202,7 @@ main {
     display: flex;             
     gap: 10px;
     margin-top: 10px;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    /* Allows wrapping on smaller screens */
 }
 
 .box {
@@ -347,11 +347,11 @@ table {
 
 .product-track {
     display: flex;
-    overflow-x: auto;
+    overflow-x: auto;   /* Horizontal scrolling */
     gap: 12px;
     padding: 10px 5px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    scrollbar-width: none;  
+    -ms-overflow-style: none;   /* IE and Edge */
 }
 .product-track::-webkit-scrollbar {
     display: none;
@@ -370,8 +370,8 @@ table {
     align-items: center;
     justify-content: center;
     color: #111;
-    z-index: 2;
-    flex-shrink: 0;
+    z-index: 2;     /* Above product cards */
+    flex-shrink: 0;     /* Prevents shrinking */
 }
 
 .nav-btn:hover {
@@ -411,14 +411,14 @@ table {
     color: var(--amz-link);
     text-decoration: none;
     font-size: 14px;
-    line-height: 1.4;
-    max-height: 80px;
-    overflow: hidden;
+    line-height: 1.4;   /* Slightly increased for readability */
+    max-height: 80px;   
+    overflow: hidden;   /* Ensures text doesn't overflow */
     text-overflow: ellipsis;
     /* Webkit line clamping */
     display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;      /* Limits to 4 lines */
+    -webkit-box-orient: vertical;   /* Vertical orientation */
     margin-bottom: 4px;
 }
 
@@ -679,7 +679,4 @@ footer {
     color: #888;
     margin-left: 2px;
 }
-       
-
-
 
